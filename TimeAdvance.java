@@ -1,4 +1,4 @@
-// This code/approach may not be used for HW2
+
 
 import java.util.*;
 public class TimeAdvance {
