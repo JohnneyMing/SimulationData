@@ -60,7 +60,7 @@ public class TimeAdvance {
 	public static void main(String[] args)
 	{
 		FEL.add(new Event(nextServiceTime(), Event.EventType.DEPARTURE));
-		FEL.add(new Event(nextInterarrivalTime(), Event.EventType.ARRIVAL));
+		//FEL.add(new Event(nextInterarrivalTime(), Event.EventType.ARRIVAL));
 		serverBusy = true;
 //		DumpFEL();
 //		DumpWaitList();
@@ -93,7 +93,7 @@ public class TimeAdvance {
 					double timeInSystem = waitTime + serviceTime;
 					maxWaitTime = Math.max(maxWaitTime, waitTime);
 					totalWaitTime += waitTime;
-					maxTimeInSystem = Math.max(maxTimeInSystem, timeInSystem);
+					//maxTimeInSystem = Math.max(maxTimeInSystem, timeInSystem);
 					totalTimeInSystem += timeInSystem;
 					FEL.add(new Event(time + serviceTime, Event.EventType.DEPARTURE));
 					serverBusy = true;					
@@ -107,7 +107,7 @@ public class TimeAdvance {
 		System.out.printf("Max queue length: %d%n", maxQ);
 		System.out.printf("Avg wait time: %f%n", totalWaitTime/jobID);
 		System.out.printf("Avg wait time for those that wait: %f%n", totalWaitTime/numWait);
-		System.out.printf("Max wait time: %f%n", maxWaitTime);
+	//	System.out.printf("Max wait time: %f%n", maxWaitTime);
 		System.out.printf("Percentage of jobs that wait: %f%n", numWait/(double)jobID);
 		System.out.printf("Avg time in system: %f%n", totalTimeInSystem/jobID);
 		System.out.printf("Max time in system: %f%n", maxTimeInSystem);
